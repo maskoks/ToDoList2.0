@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YwS-yS-f4b">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="wJ6-rB-3zQ">
+            <objects>
+                <tableViewController id="hj4-Fk-OxB" customClass="TableViewController" customModule="toDoList2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SIj-oY-Yvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Iql-pQ-yQf" customClass="CustomCell" customModule="toDoList2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iql-pQ-yQf" id="Tvk-Aw-d7z">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHE-RF-vg9">
+                                            <rect key="frame" x="37" y="11.5" width="41.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-yg-Dxo">
+                                            <rect key="frame" x="5" y="11" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="QES-I7-otN"/>
+                                                <constraint firstAttribute="width" constant="22" id="hxy-OI-4kF"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <state key="normal" image="star" catalog="system"/>
+                                            <connections>
+                                                <action selector="importanceAction:" destination="Iql-pQ-yQf" eventType="touchUpInside" id="d9l-TQ-mtp"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDS-C8-v45">
+                                            <rect key="frame" x="371" y="11" width="20" height="22"/>
+                                            <state key="normal" image="trash" catalog="system"/>
+                                            <connections>
+                                                <action selector="deleteAction:" destination="Iql-pQ-yQf" eventType="touchUpInside" id="Q0p-xd-gqo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IDS-C8-v45" firstAttribute="centerY" secondItem="Tvk-Aw-d7z" secondAttribute="centerY" id="CSH-JZ-xpj"/>
+                                        <constraint firstItem="5xI-yg-Dxo" firstAttribute="centerY" secondItem="Tvk-Aw-d7z" secondAttribute="centerY" id="HtC-85-yMq"/>
+                                        <constraint firstItem="5xI-yg-Dxo" firstAttribute="leading" secondItem="Tvk-Aw-d7z" secondAttribute="leading" constant="5" id="JBb-6k-Vo3"/>
+                                        <constraint firstItem="HHE-RF-vg9" firstAttribute="leading" secondItem="5xI-yg-Dxo" secondAttribute="trailing" constant="10" id="UcI-F2-xbk"/>
+                                        <constraint firstAttribute="trailing" secondItem="IDS-C8-v45" secondAttribute="trailing" constant="23" id="dou-qV-Kdf"/>
+                                        <constraint firstItem="HHE-RF-vg9" firstAttribute="centerY" secondItem="Tvk-Aw-d7z" secondAttribute="centerY" id="fp7-5d-oGu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="importanceButton" destination="5xI-yg-Dxo" id="pY3-kG-vEL"/>
+                                    <outlet property="labelText" destination="HHE-RF-vg9" id="7Xp-zA-7S4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hj4-Fk-OxB" id="GV0-5N-yuS"/>
+                            <outlet property="delegate" destination="hj4-Fk-OxB" id="7S8-QV-n8z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YLU-r8-Zi2">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="0wu-vY-zT9">
+                                <connections>
+                                    <action selector="addTaskButtonAction:" destination="hj4-Fk-OxB" id="hb2-rO-i4n"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrow.up" catalog="system" id="44h-fP-ysb">
+                                <connections>
+                                    <action selector="sortButtonAction:" destination="hj4-Fk-OxB" id="k5f-KX-ibE"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sortButton" destination="44h-fP-ysb" id="mrZ-ea-Nch"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcB-Cd-VVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wpf-wT-vkF">
+            <objects>
+                <navigationController id="YwS-yS-f4b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Omu-r2-v9j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hj4-Fk-OxB" kind="relationship" relationship="rootViewController" id="sGj-o5-PAA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNP-bP-Uzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1013" y="-271"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
